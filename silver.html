@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Silver vs S&P 500 — $10K Over 40 Years</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a href="index.html" class="back-link">&larr; Back to Money Lab</a>
+
+<h1>$10K in Silver vs S&P 500</h1>
+<p class="subtitle">$10,000 invested &nbsp;|&nbsp; 1985 – 2024 &nbsp;|&nbsp; 40 years of price history</p>
+
+<div class="cards" id="cards"></div>
+
+<div class="chart-wrap">
+  <div class="legend-row">
+    <div class="legend-item"><div class="legend-dot" style="background:#4ade80"></div> S&P 500 (total return)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#94a3b8"></div> Silver (price only)</div>
+  </div>
+  <canvas id="chart"></canvas>
+</div>
+
+<div class="section-title">Year-by-Year Breakdown</div>
+<div style="max-width:1100px;margin:0 auto;overflow-x:auto;">
+  <table id="table"></table>
+</div>
+
+<div class="note">
+  <strong>Methodology:</strong> S&P 500 uses total return index (dividends reinvested).
+  Silver uses approximate year-end spot prices (USD/oz) — silver pays no dividends or interest.
+  $10K buys a fixed number of ounces at the start; value = ounces &times; current price.
+  No taxes, fees, storage costs, or inflation adjustment.
+  Silver price data sourced from London Fix / LBMA historical records.
+</div>
+
+<script src="silver.js"></script>
+
+</body>
+</html>

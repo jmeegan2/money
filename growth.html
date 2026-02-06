@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>$10K Growth Comparison — 40 Years (1985–2024)</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a href="index.html" class="back-link">&larr; Back to Money Lab</a>
+
+<h1>$10,000 Invested Over 40 Years</h1>
+<p class="subtitle">Age 25 → 65 &nbsp;|&nbsp; 1985 – 2024 &nbsp;|&nbsp; Historical total returns, dividends reinvested</p>
+
+<div class="cards" id="cards"></div>
+
+<div class="chart-wrap">
+  <div class="legend-row">
+    <div class="legend-item"><div class="legend-dot" style="background:#4ade80"></div> 100% S&P 500</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#60a5fa"></div> 100% Total US Market</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#facc15"></div> <span id="legend-bond-label">Age-in-Bonds</span></div>
+  </div>
+  <div class="toggle-label">Bond allocation rule for the yellow line:</div>
+  <div class="toggle-row">
+    <button class="toggle-btn active" onclick="setMode(10)">Age minus 10</button>
+    <button class="toggle-btn" onclick="setMode(20)">Age minus 20</button>
+  </div>
+  <canvas id="chart"></canvas>
+</div>
+
+<div class="section-title">Year-by-Year Breakdown</div>
+<div style="max-width:1100px;margin:0 auto;overflow-x:auto;">
+  <table id="table"></table>
+</div>
+
+<div class="note">
+  <strong>Methodology:</strong> S&P 500 total return index. Total US Market uses VTSMX/VTSAX returns (S&P 500 proxy pre-1993).
+  Bonds use Bloomberg US Aggregate Bond Index. Age-in-bonds rebalances annually.
+  <strong>Age minus 10:</strong> at age 25 → 15% bonds / 85% stocks, at age 65 → 55% bonds / 45% stocks.
+  <strong>Age minus 20:</strong> at age 25 → 5% bonds / 95% stocks, at age 65 → 45% bonds / 55% stocks.
+  All returns include dividends. No taxes, fees, or inflation adjustment.
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>

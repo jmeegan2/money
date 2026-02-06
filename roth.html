@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roth IRA vs Brokerage — Tax Impact Over 40 Years</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a href="index.html" class="back-link">&larr; Back to Money Lab</a>
+
+<h1>Roth IRA vs Taxable Brokerage</h1>
+<p class="subtitle">$10,000 in S&P 500 &nbsp;|&nbsp; Age 25 → 65 &nbsp;|&nbsp; 1985 – 2024 &nbsp;|&nbsp; Same returns, different tax treatment</p>
+
+<div class="cards" id="cards"></div>
+
+<div class="chart-wrap">
+  <div class="legend-row">
+    <div class="legend-item"><div class="legend-dot" style="background:#4ade80"></div> Roth IRA — what you keep</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#f87171"></div> Brokerage — what you keep (after tax)</div>
+  </div>
+
+  <div class="toggle-label">Capital gains tax rate at withdrawal (dividends taxed at 15% during working years):</div>
+  <div class="toggle-row" id="tax-toggles">
+    <button class="toggle-btn" data-val="0" onclick="setTaxRate(0)">0%</button>
+    <button class="toggle-btn active" data-val="15" onclick="setTaxRate(15)">15%</button>
+    <button class="toggle-btn" data-val="20" onclick="setTaxRate(20)">20%</button>
+  </div>
+
+  <canvas id="chart"></canvas>
+</div>
+
+<div class="section-title">Year-by-Year Breakdown</div>
+<div style="max-width:1100px;margin:0 auto;overflow-x:auto;">
+  <table id="table"></table>
+</div>
+
+<div class="note">
+  <strong>Methodology:</strong> Both accounts invest $10,000 in the S&P 500 total return index.
+  <strong>Roth IRA:</strong> no taxes on dividends, growth, or qualified withdrawals after age 59½.
+  <strong>Taxable brokerage:</strong> dividends are taxed annually at 15% during working years, reducing reinvestment (tax drag).
+  Upon selling, long-term capital gains are taxed at the selected withdrawal rate. Cost basis = original $10K + after-tax reinvested dividends.
+  <strong>Dividend yield</strong> is approximated as a constant % of portfolio value (historical S&P 500 average ≈ 2%).
+  No state taxes, fees, or inflation adjustment. This is a simplified model for illustration.
+</div>
+
+<script src="roth.js"></script>
+
+</body>
+</html>
